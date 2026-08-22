@@ -28,6 +28,12 @@ verificar "sauda uma pessoa pelo nome" \
 verificar "aceita nomes compostos" \
   "Ola, Ana Maria!" "$(saudacao 'Ana Maria')"
 
+verificar "usa a saudacao padrao quando o nome vem vazio" \
+  "Ola, visitante!" "$(saudacao '')"
+
+verificar "usa a saudacao padrao quando nenhum argumento e passado" \
+  "Ola, visitante!" "$(saudacao)"
+
 echo
 if [ "$falhas" -eq 0 ]; then
   echo "Todos os testes passaram."
