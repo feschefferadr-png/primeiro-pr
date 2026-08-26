@@ -14,6 +14,7 @@ docs/
 ├── sobre.html            Bio e formação
 ├── depoimentos.html      Os 6 depoimentos
 ├── blog.html             Índice do blog
+├── guia.html             Material gratuito — porta de entrada para a lista
 ├── contato.html          WhatsApp, e-mail e redes
 ├── blog/                 Os 6 textos do blog
 ├── favicon.svg           Ícone da aba do navegador
@@ -85,6 +86,21 @@ propósito.
 A página fecha com um parágrafo sobre graus de evidência científica e sobre o
 cuidado caminhar junto ao acompanhamento médico, nunca no lugar dele. Isso
 segue a orientação do CABSIN e não deve ser removido.
+
+## O guia gratuito
+
+`guia.html` existe para transformar leitor em contato. Hoje a entrega é
+**manual, por WhatsApp** — funciona sem nenhum serviço externo e, no volume
+atual, uma conversa vale mais que um e-mail capturado.
+
+Dentro do HTML há um comentário marcando exatamente onde trocar o botão pelo
+formulário embutido do Mailchimp ou do Brevo, quando existir lista. Peça só
+nome e e-mail: cada campo a mais derruba a conversão.
+
+**O material é o e-book "Mais Cuidados para o Inverno"**, que já acompanha um
+dos cursos. A página foi escrita sem citar a estação no título justamente
+para poder ser reaproveitada — mas o conteúdo entregue é de inverno, e vale
+fazer uma versão de primavera quando der.
 
 ## Elementos de conversão
 
