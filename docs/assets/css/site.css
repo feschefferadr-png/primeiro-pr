@@ -1,0 +1,324 @@
+/* ==========================================================================
+   Fernanda Scheffer · Naturóloga
+   Paleta e tipografia baseadas na identidade da marca.
+   ========================================================================== */
+
+:root {
+  /* Paleta Nova */
+  --sage-deep:  #8B9C7C;
+  --sage-pale:  #C6D0C2;
+  --lilac:      #AB98BE;
+  --violet:     #6E6790;
+  --blush:      #E8CDB8;
+
+  /* Neutros derivados (viés violeta, para conversar com a marca) */
+  --ground:     #FAF8F6;
+  --surface:    #FFFFFF;
+  --surface-2:  #F2EFF2;
+  --ink:        #2E2A33;
+  --ink-2:      #5C5563;
+  --ink-3:      #857D8C;
+  --line:       #E3DEE4;
+
+  --violet-deep: #574F73;
+  --sage-ink:    #5F6E53;
+
+  --radius: 10px;
+  --shadow: 0 1px 2px rgba(46,42,51,.04), 0 14px 40px -24px rgba(46,42,51,.32);
+
+  --measure: 66ch;
+  --gutter: clamp(20px, 5vw, 48px);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}
+
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--ink);
+  font-family: "Spectral", Georgia, "Times New Roman", serif;
+  font-size: 17px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap { width: min(1080px, 100% - var(--gutter) * 2); margin-inline: auto; }
+.narrow { width: min(720px, 100% - var(--gutter) * 2); margin-inline: auto; }
+
+img { max-width: 100%; height: auto; display: block; }
+
+a { color: var(--violet-deep); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { color: var(--violet); }
+:focus-visible { outline: 2px solid var(--violet); outline-offset: 3px; border-radius: 3px; }
+
+/* ---------- tipografia ---------- */
+
+h1, h2, h3, h4 {
+  font-family: "Spectral", Georgia, serif;
+  font-weight: 500;
+  line-height: 1.18;
+  text-wrap: balance;
+  margin: 0;
+  letter-spacing: -.008em;
+}
+
+h1 { font-size: clamp(2.3rem, 6vw, 3.7rem); }
+h2 { font-size: clamp(1.7rem, 3.6vw, 2.4rem); }
+h3 { font-size: clamp(1.2rem, 2.2vw, 1.45rem); }
+
+p { margin: 0; max-width: var(--measure); }
+
+.eyebrow {
+  font-family: "Jost", ui-sans-serif, system-ui, sans-serif;
+  font-size: .74rem;
+  font-weight: 500;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--sage-ink);
+  margin: 0;
+}
+
+.lead { font-size: 1.15rem; color: var(--ink-2); }
+
+/* ---------- cabeçalho ---------- */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(250, 248, 246, .93);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+
+.site-header .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 14px 0;
+}
+
+.brand { display: flex; flex-direction: column; line-height: 1.1; text-decoration: none; color: var(--ink); }
+.brand strong { font-family: "Spectral", serif; font-weight: 500; font-size: 1.2rem; letter-spacing: .01em; }
+.brand span {
+  font-family: "Jost", sans-serif;
+  font-size: .62rem;
+  font-weight: 400;
+  letter-spacing: .34em;
+  text-transform: uppercase;
+  color: var(--sage-ink);
+  margin-top: 3px;
+}
+
+nav.main ul { display: flex; flex-wrap: wrap; gap: 4px 22px; list-style: none; margin: 0; padding: 0; }
+nav.main a {
+  font-family: "Jost", sans-serif;
+  font-size: .87rem;
+  letter-spacing: .02em;
+  color: var(--ink-2);
+  text-decoration: none;
+  padding: 6px 0;
+  border-bottom: 1.5px solid transparent;
+  display: block;
+}
+nav.main a:hover { color: var(--violet-deep); border-bottom-color: var(--sage-pale); }
+nav.main a[aria-current="page"] { color: var(--violet-deep); border-bottom-color: var(--sage-deep); }
+
+/* ---------- botões ---------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "Jost", sans-serif;
+  font-size: .87rem;
+  font-weight: 500;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 13px 26px;
+  border-radius: 100px;
+  border: 1.5px solid transparent;
+  transition: background-color .18s ease, color .18s ease, border-color .18s ease;
+}
+.btn-primary { background: var(--violet); color: #fff; }
+.btn-primary:hover { background: var(--violet-deep); color: #fff; }
+.btn-ghost { border-color: var(--sage-deep); color: var(--sage-ink); }
+.btn-ghost:hover { background: var(--sage-deep); color: #fff; border-color: var(--sage-deep); }
+.btn-wa { background: var(--sage-deep); color: #fff; }
+.btn-wa:hover { background: var(--sage-ink); color: #fff; }
+
+/* ---------- hero ---------- */
+
+.hero { position: relative; padding: clamp(64px, 12vw, 128px) 0 clamp(56px, 9vw, 104px); overflow: hidden; }
+
+/* formas orgânicas do logotipo */
+.blob { position: absolute; border-radius: 62% 38% 44% 56% / 48% 55% 45% 52%; filter: blur(.4px); z-index: 0; }
+.blob-a { width: 340px; height: 330px; background: var(--sage-pale); opacity: .55; top: -70px; right: -60px; }
+.blob-b { width: 260px; height: 250px; background: var(--lilac); opacity: .28; top: 90px; right: 130px; border-radius: 46% 54% 58% 42% / 52% 44% 56% 48%; }
+.hero .wrap { position: relative; z-index: 1; }
+
+.hero h1 { margin-bottom: 22px; }
+.hero .lead { margin-bottom: 34px; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+
+/* ---------- seções ---------- */
+
+section { padding: clamp(52px, 8vw, 92px) 0; }
+section.tint { background: var(--surface-2); }
+
+.section-head { margin-bottom: 44px; display: flex; flex-direction: column; gap: 12px; }
+
+/* ---------- grades e cartões ---------- */
+
+.grid { display: grid; gap: 22px; }
+.grid-2 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); }
+.grid-3 { grid-template-columns: repeat(auto-fit, minmax(272px, 1fr)); }
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 30px 28px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.card h3 { color: var(--violet-deep); }
+.card p { font-size: .97rem; color: var(--ink-2); max-width: none; }
+.card .btn { align-self: flex-start; margin-top: auto; }
+
+.card-mark {
+  width: 40px; height: 40px;
+  border-radius: 58% 42% 46% 54% / 50% 52% 48% 50%;
+  background: var(--sage-pale);
+  flex: none;
+}
+.card:nth-child(2n) .card-mark { background: var(--lilac); opacity: .7; }
+.card:nth-child(3n) .card-mark { background: var(--blush); }
+
+/* ---------- serviços com preço ---------- */
+
+.service {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 6px 1fr;
+}
+.service > .stripe { background: var(--sage-deep); }
+.service:nth-child(2n) > .stripe { background: var(--lilac); }
+.service:nth-child(3n) > .stripe { background: var(--blush); }
+.service-body { padding: 30px clamp(22px, 4vw, 34px); display: flex; flex-direction: column; gap: 16px; }
+.service h3 { color: var(--violet-deep); }
+
+.modo {
+  align-self: flex-start;
+  font-family: "Jost", sans-serif;
+  font-size: .68rem;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--sage-ink);
+  background: var(--sage-pale);
+  padding: 5px 12px;
+  border-radius: 100px;
+}
+
+.service-body .btn { align-self: flex-start; }
+.service ul { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 8px; color: var(--ink-2); font-size: .97rem; }
+.service ul li::marker { color: var(--sage-deep); }
+
+.precos { border-top: 1px solid var(--line); padding-top: 18px; margin-top: 4px; }
+.precos dl { margin: 0; display: grid; grid-template-columns: 1fr auto; gap: 9px 18px; align-items: baseline; }
+.precos dt { color: var(--ink-2); font-size: .95rem; }
+.precos dd {
+  margin: 0;
+  font-family: "Jost", sans-serif;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  color: var(--violet-deep);
+  white-space: nowrap;
+}
+
+/* ---------- depoimentos ---------- */
+
+.quote {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--lilac);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 26px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.quote blockquote { margin: 0; font-size: 1rem; color: var(--ink-2); font-style: italic; }
+.quote figcaption { font-family: "Jost", sans-serif; font-size: .84rem; color: var(--ink); }
+.quote figcaption span { display: block; color: var(--ink-3); font-size: .78rem; letter-spacing: .06em; text-transform: uppercase; margin-top: 3px; }
+
+/* ---------- listas de conteúdo ---------- */
+
+.prose { display: flex; flex-direction: column; gap: 20px; }
+.prose ul { margin: 0; padding-left: 22px; display: flex; flex-direction: column; gap: 9px; color: var(--ink-2); }
+.prose ul li::marker { color: var(--sage-deep); }
+.prose h3 { margin-top: 14px; color: var(--violet-deep); }
+.prose .btn { align-self: flex-start; }
+
+.post-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+.post-list li { border-bottom: 1px solid var(--line); }
+.post-list a { display: block; padding: 22px 0; text-decoration: none; color: var(--ink); }
+.post-list a:hover { color: var(--violet-deep); }
+.post-list h3 { font-size: 1.18rem; margin-bottom: 5px; }
+.post-list time { font-family: "Jost", sans-serif; font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); }
+
+/* ---------- contato ---------- */
+
+.contato-grid { display: grid; gap: 30px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+.contato-item { display: flex; flex-direction: column; gap: 5px; }
+.contato-item .rot {
+  font-family: "Jost", sans-serif; font-size: .7rem; letter-spacing: .18em;
+  text-transform: uppercase; color: var(--sage-ink);
+}
+.contato-item a, .contato-item p { font-size: 1.02rem; }
+
+/* ---------- rodapé ---------- */
+
+.site-footer { background: var(--violet-deep); color: #EDE9F0; padding: 56px 0 34px; margin-top: 40px; }
+.site-footer a { color: #EDE9F0; }
+.site-footer .cols { display: grid; gap: 32px; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); margin-bottom: 36px; }
+.site-footer h4 { font-family: "Jost", sans-serif; font-size: .72rem; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; color: var(--sage-pale); margin: 0 0 14px; }
+.site-footer ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 9px; font-size: .95rem; }
+.site-footer p { font-size: .95rem; color: #D8D2DD; max-width: 42ch; }
+.site-footer .fine {
+  border-top: 1px solid rgba(255,255,255,.16);
+  padding-top: 22px;
+  font-family: "Jost", sans-serif;
+  font-size: .78rem;
+  color: #BCB4C4;
+  display: flex; flex-wrap: wrap; gap: 8px 22px; justify-content: space-between;
+}
+
+/* ---------- utilitários ---------- */
+
+.skip {
+  position: absolute; left: -9999px;
+  background: var(--violet); color: #fff; padding: 10px 18px; border-radius: 0 0 6px 0; z-index: 100;
+  font-family: "Jost", sans-serif; font-size: .85rem;
+}
+.skip:focus { left: 0; top: 0; }
+
+@media (max-width: 720px) {
+  .site-header .wrap { flex-direction: column; align-items: flex-start; gap: 12px; }
+  nav.main ul { gap: 2px 16px; }
+  .blob-a, .blob-b { display: none; }
+}
