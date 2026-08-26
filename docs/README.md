@@ -86,6 +86,28 @@ A página fecha com um parágrafo sobre graus de evidência científica e sobre 
 cuidado caminhar junto ao acompanhamento médico, nunca no lugar dele. Isso
 segue a orientação do CABSIN e não deve ser removido.
 
+## Elementos de conversão
+
+Cada um destes existe por um motivo. Se for mexer, saiba o que está desfazendo.
+
+| Elemento | Onde | Por quê |
+|---|---|---|
+| Convite no fim de cada post | `blog/*.html` | Antes, os posts terminavam em "Voltar ao blog" — quem lia o texto inteiro não tinha para onde ir |
+| Resumo e etiqueta na lista | `blog.html` | Só título não convida a clicar; e a data "2020" em tudo sinalizava blog abandonado |
+| FAQ com seis perguntas | `acompanhamento.html` | Dúvidas que travam a decisão e que ninguém escreve para perguntar |
+| Barra fixa no rodapé (celular) | `acompanhamento.html` | A página tem 8.000px; sem ela, quem se convence no meio precisa rolar até o fim |
+| Ponte dos cursos | `cursos.html` | Quem chega pelo curso e quer atenção pessoal precisa saber que existe |
+
+A barra fixa aparece **só** na página do acompanhamento, via `body.tem-cta-fixa`,
+e só abaixo de 760px. O `padding-bottom` do body existe para ela não cobrir o
+rodapé — se mudar a altura da barra, ajuste o padding junto.
+
+### Ainda faltando nos cursos
+
+A página não mostra **preço** nem **prova**. Os dois furos são reais e dependem
+de informação que não está no backup: os valores atuais na Hotmart e algum
+retorno de aluno. Capas existem no backup para dois dos três cursos.
+
 ## Os links da Hotmart
 
 Dois cursos usam o link curto normal, que leva à página de vendas:
