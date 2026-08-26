@@ -7,7 +7,8 @@ página `docs/guia.html`.
 
 | Arquivo | O que é |
 |---|---|
-| `primavera.html` | O conteúdo, em HTML |
+| `montar.py` | Monta o HTML a partir do conteúdo — **edite aqui** |
+| `primavera.html` | O HTML gerado (não edite direto: `montar.py` sobrescreve) |
 | `estilo.css` | O layout de impressão (A4, paleta da marca) |
 | `gerar.mjs` | Renderiza o PDF via Chromium |
 | `Mais-cuidados-para-a-primavera.pdf` | O arquivo final |
@@ -15,10 +16,10 @@ página `docs/guia.html`.
 ## Como regerar depois de editar
 
 ```bash
-node gerar.mjs
+python3 montar.py && node gerar.mjs
 ```
 
-Edite o texto em `primavera.html` e rode o comando. O PDF é reescrito.
+Edite o texto em `montar.py` e rode os dois comandos. O PDF é reescrito.
 
 ## Decisões
 
@@ -29,6 +30,13 @@ justamente para começar uma conversa.
 **A fonte é Bitstream Charter**, não a Spectral do site. Charter estava
 disponível no sistema e foi desenhada para impressão; o site usa Google
 Fonts, que não se pode embutir num PDF sem os arquivos da fonte.
+
+**As fontes.** O conteúdo segue a terminologia como é ensinada no Brasil:
+Fígado / Vesícula Biliar / elemento Madeira e as três funções do Fígado
+(EBRAMEC); *vasanta ritucharya*, agravamento de kapha e enfraquecimento de
+agni (Vida Veda e literatura de ritucharya). A página 5 — sobre a primavera
+variar por região do Brasil — é o que diferencia este material de traduções
+diretas de textos indianos.
 
 **O guia não repete o curso.** Ele apresenta a estação e entrega o mapa de
 observação; o curso Desperte a Sua Saúde na Primavera aprofunda, e tem um
