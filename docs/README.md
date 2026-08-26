@@ -8,7 +8,8 @@ dados, sem plugins: são arquivos de texto que qualquer servidor entrega.
 ```
 docs/
 ├── index.html            Início
-├── terapeuticas.html     Os 7 atendimentos, com valores
+├── acompanhamento.html   A oferta: acompanhamento de 3 meses
+├── terapeuticas.html     Redirecionamento — a URL antiga aponta para a nova
 ├── cursos.html           Os 3 cursos, com link para a Hotmart
 ├── sobre.html            Bio e formação
 ├── depoimentos.html      Os 6 depoimentos
@@ -65,6 +66,25 @@ recortada, então ela assenta sobre qualquer cor de fundo.
 As ilustrações dos serviços e dos cursos (`Design-sem-nome-*.png`,
 `naturologia.jpg`, `desperta.jpeg` e companhia) estão no backup mas ainda não
 foram usadas — as páginas de Terapêuticas e Cursos hoje são só texto e cor.
+
+## A oferta
+
+O site vende **uma coisa só**: um acompanhamento de três meses, por R$ 990
+(ou 3x R$ 330). Não há serviços avulsos, nem preço por sessão, nem botão de
+agendar por prática.
+
+As oito práticas — floral, auriculoterapia, arte integrativa, ventosaterapia,
+aromaterapia, dietoterapia chinesa, respiração e meditação — aparecem como
+**glossário, não como cardápio**. Nenhuma tem preço próprio nem botão próprio,
+e todas são descritas com "Indicada para", em linguagem condicional.
+
+**Isso é deliberado. Não adicione preço nem botão de agendamento a nenhuma
+prática individual** — seria voltar ao modelo avulso que o site abandonou de
+propósito.
+
+A página fecha com um parágrafo sobre graus de evidência científica e sobre o
+cuidado caminhar junto ao acompanhamento médico, nunca no lugar dele. Isso
+segue a orientação do CABSIN e não deve ser removido.
 
 ## Os links da Hotmart
 

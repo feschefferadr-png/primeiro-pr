@@ -343,3 +343,147 @@ section.tint { background: var(--surface-2); }
 .quote figcaption { display: flex; align-items: center; gap: 12px; }
 .quote figcaption img { width: 46px; height: 46px; border-radius: 50%; flex: none; object-fit: cover; }
 .quote figcaption .quem { display: flex; flex-direction: column; }
+
+/* ==========================================================================
+   Página do acompanhamento
+   ========================================================================== */
+
+/* ---------- dimensões ---------- */
+
+.dimensoes { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+.dimensoes li {
+  display: grid;
+  grid-template-columns: minmax(0, 130px) minmax(0, 1fr);
+  gap: 4px 22px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+}
+.dimensoes li:last-child { border-bottom: none; }
+.dimensoes dfn {
+  font-style: normal;
+  font-family: "Jost", sans-serif;
+  font-size: .8rem;
+  font-weight: 500;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--sage-ink);
+  padding-top: 3px;
+}
+.dimensoes span { color: var(--ink-2); }
+@media (max-width: 620px) { .dimensoes li { grid-template-columns: 1fr; gap: 6px; } }
+
+/* ---------- práticas ---------- */
+
+.praticas { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 330px), 1fr)); }
+
+.pratica {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 24px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.pratica h3 { font-size: 1.12rem; color: var(--violet-deep); }
+.pratica p { font-size: .95rem; color: var(--ink-2); margin: 0; max-width: none; }
+.pratica .indic {
+  font-size: .9rem;
+  color: var(--ink-2);
+  padding-top: 10px;
+  border-top: 1px dashed var(--line);
+  margin-top: auto;
+}
+.pratica .indic b {
+  font-family: "Jost", sans-serif;
+  font-size: .74rem;
+  font-weight: 500;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--sage-ink);
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* ---------- etapas do processo ---------- */
+
+.etapas { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+.etapas li {
+  display: grid;
+  grid-template-columns: 20px minmax(0, 1fr);
+  gap: 0 20px;
+  padding-bottom: 30px;
+  position: relative;
+}
+.etapas li::before {
+  content: "";
+  grid-row: 1 / span 2;
+  width: 13px; height: 13px;
+  border-radius: 50%;
+  background: var(--sage-deep);
+  margin-top: 7px;
+}
+.etapas li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: 6px; top: 22px; bottom: 0;
+  width: 1px;
+  background: var(--line);
+}
+.etapas li:last-child { padding-bottom: 0; }
+.etapas h3 { font-size: 1.08rem; margin-bottom: 5px; }
+.etapas p { font-size: .95rem; color: var(--ink-2); max-width: none; }
+
+/* ---------- investimento ---------- */
+
+.preco-bloco {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: clamp(30px, 5vw, 46px);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+}
+.preco-valor {
+  font-family: "Spectral", serif;
+  font-size: clamp(2.4rem, 6vw, 3.4rem);
+  line-height: 1;
+  color: var(--violet-deep);
+  font-variant-numeric: tabular-nums;
+}
+.preco-valor small { font-size: .38em; color: var(--ink-3); display: block; margin-top: 12px; letter-spacing: .01em; }
+
+.inclui { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.inclui li { display: grid; grid-template-columns: 18px 1fr; gap: 12px; color: var(--ink-2); font-size: .97rem; }
+.inclui li::before { content: "✓"; color: var(--sage-deep); font-weight: 600; }
+
+/* ---------- notas e garantia ---------- */
+
+.nota {
+  border-left: 3px solid var(--sage-deep);
+  background: var(--surface-2);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 20px 24px;
+  font-size: .95rem;
+  color: var(--ink-2);
+}
+.nota strong { color: var(--ink); }
+.nota p { max-width: none; }
+.nota p + p { margin-top: 12px; }
+.nota.destaque { border-left-color: var(--lilac); }
+
+.selo {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-family: "Jost", sans-serif;
+  font-size: .8rem;
+  letter-spacing: .06em;
+  color: var(--sage-ink);
+  background: var(--sage-pale);
+  padding: 9px 18px;
+  border-radius: 100px;
+}
