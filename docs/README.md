@@ -70,9 +70,15 @@ foram usadas — as páginas de Terapêuticas e Cursos hoje são só texto e cor
 
 ## A oferta
 
-O site vende **uma coisa só**: um acompanhamento de três meses, por R$ 990
-(ou 3x R$ 330). Não há serviços avulsos, nem preço por sessão, nem botão de
-agendar por prática.
+O site vende **uma coisa só**: um acompanhamento de **R$ 350** (ou 2x R$ 175),
+com duas consultas e 28 dias entre elas — inicial, tratamento entregue, plano
+em PDF, suporte por mensagem e consulta de retorno. Não há serviços avulsos,
+nem preço por sessão, nem botão de agendar por prática.
+
+O formato anterior era de três meses por R$ 990. Mudou porque a prática mostra
+diferença já em 30 dias, e porque um compromisso menor é uma decisão que a
+pessoa toma sozinha — importa mais no início, quando ainda não há prova social
+desta oferta.
 
 As oito práticas — floral, auriculoterapia, arte integrativa, ventosaterapia,
 aromaterapia, dietoterapia chinesa, respiração e meditação — aparecem como

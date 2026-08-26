@@ -371,8 +371,9 @@ P.append(pg(f'''
 
     <div class="caixa" style="margin-top:5mm">
       <h3>Acompanhamento Integrativo em Saúde</h3>
-      <p>Três meses, com consulta inicial aprofundada, plano personalizado e acompanhamento por
-      mensagem ao longo de todo o período. Presencial em São Paulo e online para o Brasil inteiro.</p>
+      <p>Duas consultas com 28 dias entre elas: uma inicial aprofundada, o tratamento e o plano
+      personalizado, suporte por mensagem ao longo do período, e o retorno para avaliar o que mudou.
+      Presencial em São Paulo e online para o Brasil inteiro.</p>
       <p style="margin-bottom:0"><strong>A conversa inicial é de vinte minutos e não custa nada</strong> —
       serve para a gente entender junto se faz sentido para você.</p>
     </div>
