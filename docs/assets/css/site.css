@@ -5,11 +5,11 @@
 
 :root {
   /* Paleta Nova */
-  --sage-deep:  #8B9C7C;
-  --sage-pale:  #C6D0C2;
-  --lilac:      #AB98BE;
-  --violet:     #6E6790;
-  --blush:      #E8CDB8;
+  --sage-deep:  #889878;
+  --sage-pale:  #C0C8B8;
+  --lilac:      #A898B0;
+  --violet:     #706888;
+  --blush:      #E0D0B8;
 
   /* Neutros derivados (viés violeta, para conversar com a marca) */
   --ground:     #FAF8F6;
@@ -20,8 +20,8 @@
   --ink-3:      #857D8C;
   --line:       #E3DEE4;
 
-  --violet-deep: #574F73;
-  --sage-ink:    #5F6E53;
+  --violet-deep: #554E6B;
+  --sage-ink:    #59684D;
 
   --radius: 10px;
   --shadow: 0 1px 2px rgba(46,42,51,.04), 0 14px 40px -24px rgba(46,42,51,.32);
@@ -105,12 +105,14 @@ p { margin: 0; max-width: var(--measure); }
   padding: 14px 0;
 }
 
-.brand { display: flex; flex-direction: column; line-height: 1.1; text-decoration: none; color: var(--ink); }
-.brand strong { font-family: "Spectral", serif; font-weight: 500; font-size: 1.2rem; letter-spacing: .01em; }
-.brand span {
+.brand { display: flex; align-items: center; gap: 11px; text-decoration: none; color: var(--ink); }
+.brand-mark { width: 44px; height: auto; flex: none; }
+.brand-name { display: flex; flex-direction: column; line-height: 1.1; }
+.brand-name strong { font-family: "Spectral", serif; font-weight: 500; font-size: 1.2rem; letter-spacing: .01em; }
+.brand-name em {
   font-family: "Jost", sans-serif;
+  font-style: normal;
   font-size: .62rem;
-  font-weight: 400;
   letter-spacing: .34em;
   text-transform: uppercase;
   color: var(--sage-ink);
@@ -264,7 +266,7 @@ section.tint { background: var(--surface-2); }
 }
 .quote blockquote { margin: 0; font-size: 1rem; color: var(--ink-2); font-style: italic; }
 .quote figcaption { font-family: "Jost", sans-serif; font-size: .84rem; color: var(--ink); }
-.quote figcaption span { display: block; color: var(--ink-3); font-size: .78rem; letter-spacing: .06em; text-transform: uppercase; margin-top: 3px; }
+.quote figcaption .quem span { display: block; color: var(--ink-3); font-size: .78rem; letter-spacing: .06em; text-transform: uppercase; margin-top: 3px; }
 
 /* ---------- listas de conteúdo ---------- */
 
@@ -322,3 +324,22 @@ section.tint { background: var(--surface-2); }
   nav.main ul { gap: 2px 16px; }
   .blob-a, .blob-b { display: none; }
 }
+
+/* ---------- retrato ---------- */
+
+.retrato-bloco { display: grid; gap: clamp(28px, 5vw, 52px); grid-template-columns: minmax(0, 1fr); align-items: start; }
+@media (min-width: 860px) { .retrato-bloco { grid-template-columns: 300px minmax(0, 1fr); } }
+
+.retrato { position: relative; }
+.retrato img { border-radius: 54% 46% 48% 52% / 46% 50% 50% 54%; box-shadow: var(--shadow); }
+.retrato::before {
+  content: ""; position: absolute; inset: -16px -14px 22px 14px;
+  background: var(--sage-pale); opacity: .5; z-index: -1;
+  border-radius: 58% 42% 46% 54% / 52% 46% 54% 48%;
+}
+
+/* ---------- rosto no depoimento ---------- */
+
+.quote figcaption { display: flex; align-items: center; gap: 12px; }
+.quote figcaption img { width: 46px; height: 46px; border-radius: 50%; flex: none; object-fit: cover; }
+.quote figcaption .quem { display: flex; flex-direction: column; }
