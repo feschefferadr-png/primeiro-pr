@@ -1,0 +1,92 @@
+@page { size: A4; margin: 0; }
+
+:root {
+  --sage-deep:#889878; --sage-pale:#C0C8B8; --lilac:#A898B0;
+  --violet:#706888; --violet-deep:#554E6B; --blush:#E0D0B8;
+  --ground:#FAF8F6; --ink:#2E2A33; --ink-2:#5C5563; --ink-3:#857D8C; --line:#E3DEE4;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: "Bitstream Charter", Charter, Georgia, serif;
+  color: var(--ink);
+  font-size: 11.2pt;
+  line-height: 1.62;
+  background: #fff;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.pagina {
+  width: 210mm; height: 297mm;
+  padding: 24mm 22mm 20mm;
+  position: relative;
+  page-break-after: always;
+  overflow: hidden;
+  background: var(--ground);
+  display: flex; flex-direction: column;
+}
+.pagina:last-child { page-break-after: auto; }
+
+/* formas orgânicas da marca */
+.pagina > * { position: relative; z-index: 1; }
+.pagina > .blob {
+  position: absolute;
+  z-index: 0;
+  border-radius: 62% 38% 44% 56% / 48% 55% 45% 52%;
+}
+
+h1 { font-size: 30pt; line-height: 1.12; font-weight: 400; letter-spacing: -.01em; }
+h2 { font-size: 18pt; line-height: 1.2; font-weight: 400; color: var(--violet-deep); margin-bottom: 5mm; }
+h3 { font-size: 12.5pt; font-weight: 700; color: var(--violet-deep); margin-bottom: 2mm; }
+
+p { margin-bottom: 4mm; }
+p:last-child { margin-bottom: 0; }
+
+.rotulo {
+  font-family: "Liberation Sans", Arial, sans-serif;
+  font-size: 7.5pt; letter-spacing: .22em; text-transform: uppercase;
+  color: var(--sage-deep); font-weight: 700; margin-bottom: 4mm;
+}
+
+.bloco { margin-bottom: 7mm; }
+.bloco:last-child { margin-bottom: 0; }
+
+ul { margin: 0 0 4mm 5mm; }
+li { margin-bottom: 2mm; }
+li::marker { color: var(--sage-deep); }
+
+.caixa {
+  background: #fff; border: .3mm solid var(--line);
+  border-left: 1mm solid var(--sage-deep);
+  padding: 5mm 6mm; margin-bottom: 5mm;
+}
+.caixa.lilas { border-left-color: var(--lilac); }
+.caixa.pessego { border-left-color: var(--blush); }
+.caixa p { font-size: 10.4pt; }
+
+.duas { display: grid; grid-template-columns: 1fr 1fr; gap: 6mm; }
+
+.numero {
+  font-family: "Liberation Sans", sans-serif;
+  font-size: 8pt; letter-spacing: .1em; color: var(--ink-3);
+  position: absolute; bottom: 12mm; left: 22mm; right: 22mm;
+  display: flex; justify-content: space-between;
+  border-top: .2mm solid var(--line); padding-top: 3mm;
+}
+
+table { width: 100%; border-collapse: collapse; font-size: 9.4pt; margin-top: 3mm; }
+th {
+  font-family: "Liberation Sans", sans-serif; font-size: 7.5pt; font-weight: 700;
+  letter-spacing: .1em; text-transform: uppercase; color: var(--sage-deep);
+  text-align: left; padding: 2.5mm 2mm; border-bottom: .4mm solid var(--sage-pale);
+}
+td { padding: 3.6mm 2mm; border-bottom: .2mm solid var(--line); color: var(--ink-2); }
+td.dia { font-weight: 700; color: var(--ink); width: 22mm; }
+
+.destaque-frase {
+  font-size: 14pt; line-height: 1.4; color: var(--violet-deep);
+  padding: 6mm 0; border-top: .3mm solid var(--sage-pale); border-bottom: .3mm solid var(--sage-pale);
+  margin: 6mm 0;
+}
