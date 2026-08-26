@@ -11,6 +11,7 @@ página `docs/guia.html`.
 | `primavera.html` | O HTML gerado (não edite direto: `montar.py` sobrescreve) |
 | `estilo.css` | O layout de impressão (A4, paleta da marca) |
 | `gerar.mjs` | Renderiza o PDF via Chromium |
+| `fotos/*.b64` | As fotos, já redimensionadas e em base64 |
 | `Mais-cuidados-para-a-primavera.pdf` | O arquivo final |
 
 ## Como regerar depois de editar
@@ -26,6 +27,16 @@ Edite o texto em `montar.py` e rode os dois comandos. O PDF é reescrito.
 **Não fica em `docs/`** de propósito. Se estivesse, teria URL pública e
 qualquer um baixaria direto — e a entrega manual por WhatsApp existe
 justamente para começar uma conversa.
+
+**Corpo em 12,6pt, margem lateral de 26mm.** A primeira versão usava 11,2pt
+com margem de 22mm — pequeno demais para ler em tela, e com linha longa
+demais para o olho voltar sozinho. A medida atual dá cerca de 75 caracteres
+por linha, que é a faixa confortável.
+
+**As fotos vêm do backup do site antigo**, redimensionadas para 1300px e
+embutidas em base64 para o PDF não depender de arquivo externo. São cinco:
+flores de primavera na capa, campo de girassóis, girassol ao entardecer,
+prato de folhas, e o retrato dela no fechamento.
 
 **A fonte é Bitstream Charter**, não a Spectral do site. Charter estava
 disponível no sistema e foi desenhada para impressão; o site usa Google

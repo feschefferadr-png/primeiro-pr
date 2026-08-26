@@ -2,6 +2,11 @@
 """Monta o HTML do e-book de primavera. Rode e depois: node gerar.mjs"""
 logo = open('logo.b64').read().strip()
 
+def foto(nome, classe, alt=""):
+    b64 = open(f'fotos/{nome}.b64').read().strip()
+    return f'<img class="{classe}" src="data:image/jpeg;base64,{b64}" alt="{alt}">'
+
+
 def pg(conteudo, n=None, blobs=""):
     rodape = (f'<div class="numero"><span>Mais cuidados para a primavera</span>'
               f'<span>{n}</span></div>') if n else ''
@@ -15,8 +20,9 @@ P = []
 
 # ---------------------------------------------------------------- 1. capa
 P.append(pg(f'''
+  {foto("capa", "foto-capa", "Flores de primavera")}
   <div style="flex:1;display:flex;flex-direction:column;justify-content:center">
-    <img src="data:image/png;base64,{logo}" style="width:38mm;margin-bottom:14mm">
+    <img src="data:image/png;base64,{logo}" style="width:34mm;margin-bottom:9mm">
     <p class="rotulo">Guia de autocuidado</p>
     <h1>Mais cuidados<br>para a primavera</h1>
     <p style="font-size:13pt;color:var(--ink-2);max-width:112mm;margin-top:8mm;line-height:1.5">
@@ -56,7 +62,8 @@ P.append(pg('''
   </div>''', n=2, blobs=B3))
 
 # ---------------------------------------------------------------- 3. medicina chinesa
-P.append(pg('''
+P.append(pg(f'''
+  {foto("campo", "faixa", "Campo de girassóis")}
   <p class="rotulo">A estação · parte um</p>
   <h2>Primavera na medicina chinesa</h2>
 
@@ -67,27 +74,44 @@ P.append(pg('''
     na natureza e em nós.</p>
   </div>
 
-  <div class="bloco">
-    <h3>As três funções do Fígado, e o que elas explicam</h3>
-    <ul>
-      <li><strong>Regula e suaviza o fluir do Qi.</strong> Quando esse fluir encontra obstáculo,
-      aparece como irritabilidade, suspiros frequentes, sensação de aperto no peito ou pavio curto.</li>
-      <li><strong>Armazena o sangue.</strong> Daí a relação com o sono e com o ciclo menstrual —
-      é à noite, em repouso, que o sangue retorna ao Fígado.</li>
-      <li><strong>Controla os tendões.</strong> É por isso que a rigidez desta época costuma
-      aparecer em ombros, pescoço, mandíbula e atrás dos joelhos, e não em qualquer lugar.</li>
-    </ul>
-    <p style="font-size:10.4pt;color:var(--ink-2)">A tradição acrescenta que o Fígado <em>se abre
-    nos olhos</em> — o que dá contexto aos olhos secos, cansados ou sensíveis à luz que muita gente
-    relata justamente nesta estação.</p>
-  </div>
-
   <div class="caixa">
     <h3>O que a estação pede</h3>
-    <p>Movimento suave e regular: alongamento, caminhada, ar livre. Menos rigidez na agenda.
-    E espaço para a raiva ser sentida em vez de engolida — emoção contida é, nessa leitura,
-    Qi parado, e Qi parado é onde o desconforto se instala.</p>
-  </div>''', n=3, blobs=B1))
+    <p style="margin-bottom:0">Movimento suave e regular: alongamento, caminhada, ar livre. Menos
+    rigidez na agenda. E espaço para a raiva ser sentida em vez de engolida — emoção contida é,
+    nessa leitura, Qi parado, e Qi parado é onde o desconforto se instala.</p>
+  </div>''', n=3))
+
+# ---------------------------------------------------------------- 4. as tres funcoes
+P.append(pg('''
+  <p class="rotulo">A estação · parte um</p>
+  <h2>As três funções do Fígado</h2>
+
+  <p style="margin-bottom:6mm;color:var(--ink-2)">Cada uma explica um grupo diferente de sintomas
+  desta época — e é por isso que vale conhecê-las separadamente.</p>
+
+  <div class="bloco">
+    <h3>Regula e suaviza o fluir do Qi</h3>
+    <p>Quando esse fluir encontra obstáculo, aparece como irritabilidade, suspiros frequentes,
+    sensação de aperto no peito ou pavio curto.</p>
+  </div>
+
+  <div class="bloco">
+    <h3>Armazena o sangue</h3>
+    <p>Daí a relação com o sono e com o ciclo menstrual — é à noite, em repouso, que o sangue
+    retorna ao Fígado.</p>
+  </div>
+
+  <div class="bloco">
+    <h3>Controla os tendões</h3>
+    <p>É por isso que a rigidez desta época costuma aparecer em ombros, pescoço, mandíbula e atrás
+    dos joelhos, e não em qualquer lugar.</p>
+  </div>
+
+  <div class="caixa lilas">
+    <p style="margin-bottom:0">A tradição acrescenta que o Fígado <em>se abre nos olhos</em> — o que
+    dá contexto aos olhos secos, cansados ou sensíveis à luz que muita gente relata justamente nesta
+    estação.</p>
+  </div>''', n=4, blobs=B1))
 
 # ---------------------------------------------------------------- 4. ayurveda
 P.append(pg('''
@@ -119,7 +143,7 @@ P.append(pg('''
     <p>Vindas de lugares e séculos diferentes, chinesa e ayurvédica chegam à mesma orientação
     prática para esta estação: <strong>leveza e movimento</strong>. Menos peso na comida, mais
     circulação no corpo, e uma rotina que não prenda.</p>
-  </div>''', n=4, blobs=B2))
+  </div>''', n=5, blobs=B2))
 
 # ---------------------------------------------------------------- 5. o Brasil
 P.append(pg('''
@@ -156,24 +180,30 @@ P.append(pg('''
     <p style="margin-bottom:0">Se as recomendações das próximas páginas não baterem com o que você
     sente, <strong>confie no que você sente</strong>. O corpo à sua frente vale mais que o texto
     na página — inclusive este.</p>
-  </div>''', n=5, blobs=B3))
+  </div>''', n=6, blobs=B3))
 
-# ---------------------------------------------------------------- 6. rotina
-P.append(pg('''
+# ---------------------------------------------------------------- 7. rotina, manha
+P.append(pg(f'''
+  {foto("entardecer", "faixa", "Girassol ao entardecer")}
   <p class="rotulo">A rotina do dia</p>
   <h2>Dinacharya, ajustada à estação</h2>
 
-  <p style="margin-bottom:6mm;color:var(--ink-2)">O ayurveda chama de <em>dinacharya</em> a rotina
+  <p style="margin-bottom:7mm;color:var(--ink-2)">O ayurveda chama de <em>dinacharya</em> a rotina
   diária — a ideia de que a hora em que você faz cada coisa importa tanto quanto a coisa em si.</p>
 
   <div class="bloco">
     <h3>Ao acordar</h3>
-    <ul>
+    <ul style="margin-bottom:0">
       <li>Levante mais cedo do que levantava no inverno. Dormir demais na primavera aumenta o peso, não o descanso.</li>
       <li>Raspe a língua e beba um copo de água morna antes de qualquer outra coisa.</li>
       <li>Movimente-se antes de sentar: cinco minutos de alongamento já mudam o dia.</li>
     </ul>
-  </div>
+  </div>''', n=7))
+
+# ---------------------------------------------------------------- 8. rotina, dia e noite
+P.append(pg('''
+  <p class="rotulo">A rotina do dia</p>
+  <h2>Do meio-dia ao adormecer</h2>
 
   <div class="bloco">
     <h3>Ao longo do dia</h3>
@@ -194,14 +224,20 @@ P.append(pg('''
       <li>Se o sono ficou mais leve nesta época, escureça mais o quarto: a primavera clareia o fim
       da tarde e o corpo responde à luz.</li>
     </ul>
-  </div>''', n=6, blobs=B1))
+  </div>
+
+  <div class="caixa lilas">
+    <p style="margin-bottom:0">Se for escolher <strong>uma só</strong> destas mudanças, escolha o
+    jantar mais cedo. É a que costuma render diferença mais rápido, e a que menos exige de você.</p>
+  </div>''', n=8, blobs=B3))
 
 # ---------------------------------------------------------------- 7. mesa
-P.append(pg('''
+P.append(pg(f'''
+  {foto("mesa", "faixa", "Prato de folhas e legumes frescos")}
   <p class="rotulo">A mesa</p>
   <h2>O que favorece e o que pesa</h2>
 
-  <p style="margin-bottom:5mm;color:var(--ink-2)">Não é dieta, é direção. Com o agni mais fraco e
+  <p style="margin-bottom:6mm;color:var(--ink-2)">Não é dieta, é direção. Com o agni mais fraco e
   kapha em movimento, o corpo pede o que é leve, seco e levemente aquecido.</p>
 
   <div class="duas">
@@ -229,12 +265,9 @@ P.append(pg('''
     </div>
   </div>
 
-  <div class="caixa lilas" style="margin-top:6mm">
-    <h3>Uma pergunta que vale mais que a lista</h3>
-    <p style="margin-bottom:0">Antes de comer: <em>estou com fome, ou com outra coisa?</em> Com o
-    agni enfraquecido, a vontade de comer costuma aumentar sem que a fome aumente junto. Só reparar
-    nisso já muda escolhas — e não exige disciplina nenhuma.</p>
-  </div>''', n=7, blobs=B2))
+  <p style="margin-top:6mm;font-size:11.8pt;color:var(--ink-2)">E antes de comer, uma pergunta que
+  vale mais que a lista inteira: <strong>estou com fome, ou com outra coisa?</strong> Com o agni
+  enfraquecido, a vontade de comer aumenta sem que a fome aumente junto.</p>''', n=9, blobs=B2))
 
 # ---------------------------------------------------------------- 8. práticas
 P.append(pg('''
@@ -265,7 +298,7 @@ P.append(pg('''
     <p style="font-size:10.4pt;color:var(--ink-2)">Se sentir dor durante qualquer uma das duas, pare.
     Desconforto de alongamento é uma coisa; dor é outra, e é informação para investigar, não para
     atravessar.</p>
-  </div>''', n=8, blobs=B3))
+  </div>''', n=10, blobs=B3))
 
 # ---------------------------------------------------------------- 9. mapa
 P.append(pg('''
@@ -291,7 +324,7 @@ P.append(pg('''
     <tr><td class="dia">Sexta</td><td></td><td></td><td></td></tr>
     <tr><td class="dia">Sábado</td><td></td><td></td><td></td></tr>
     <tr><td class="dia">Domingo</td><td></td><td></td><td></td></tr>
-  </table>''', n=9, blobs=B1))
+  </table>''', n=11, blobs=B1))
 
 # ---------------------------------------------------------------- 10. ler o mapa
 P.append(pg('''
@@ -321,11 +354,12 @@ P.append(pg('''
     nutricionais aparecem exatamente assim.</p>
     <p style="margin-bottom:0"><strong>Procure um médico e peça exames.</strong> Nenhum guia, nenhuma
     prática integrativa e nenhum profissional não-médico substitui esse passo.</p>
-  </div>''', n=10, blobs=B2))
+  </div>''', n=12, blobs=B2))
 
 # ---------------------------------------------------------------- 11. fechamento
 P.append(pg(f'''
   <div style="flex:1;display:flex;flex-direction:column;justify-content:center">
+    {foto("fernanda", "retrato-fim", "Fernanda Scheffer")}
     <p class="rotulo">Para seguir</p>
     <h2 style="font-size:22pt;margin-bottom:7mm">Se você quiser olhar isso<br>no seu caso</h2>
 
@@ -333,7 +367,7 @@ P.append(pg(f'''
     de uma estação, não o seu corpo, a sua história e o seu momento.</p>
 
     <p style="margin-bottom:4mm">Se a semana de observação levantou mais perguntas do que respostas,
-    ou se você reconheceu padrões que se repetem há anos, talvez seja hora de olhar isso com alguém junto.</p>
+    talvez seja hora de olhar isso com alguém junto.</p>
 
     <div class="caixa" style="margin-top:5mm">
       <h3>Acompanhamento Integrativo em Saúde</h3>
@@ -343,13 +377,12 @@ P.append(pg(f'''
       serve para a gente entender junto se faz sentido para você.</p>
     </div>
 
-    <p style="font-size:10.4pt;color:var(--ink-2);margin-top:5mm">E se preferir seguir sozinha por
+    <p style="font-size:11pt;color:var(--ink-2);margin-top:5mm">E se preferir seguir sozinha por
     enquanto, existe o curso <strong>Desperte a Sua Saúde na Primavera</strong> — cinco módulos
-    gravados que aprofundam o que este guia apresenta, com um módulo inteiro sobre planejamento e
-    organização da rotina.</p>
+    gravados que aprofundam o que este guia apresenta.</p>
 
-    <div style="margin-top:6mm">
-      <p style="font-family:'Liberation Sans',sans-serif;font-size:10pt;line-height:1.9">
+    <div style="margin-top:4mm">
+      <p style="font-family:'Liberation Sans',sans-serif;font-size:10pt;line-height:1.7">
         <strong>WhatsApp</strong> · 11 95990-7416<br>
         <strong>Instagram</strong> · @fernandascheffer_<br>
         <strong>Site</strong> · fernandascheffer.com
