@@ -66,6 +66,25 @@ As ilustrações dos serviços e dos cursos (`Design-sem-nome-*.png`,
 `naturologia.jpg`, `desperta.jpeg` e companhia) estão no backup mas ainda não
 foram usadas — as páginas de Terapêuticas e Cursos hoje são só texto e cor.
 
+## Os links da Hotmart
+
+Dois cursos usam o link curto normal, que leva à página de vendas:
+
+```
+https://go.hotmart.com/X75026038O    Primavera
+https://go.hotmart.com/G72063648B    Inverno
+```
+
+O terceiro precisa do parâmetro `?dp=1`, que pula direto para o checkout:
+
+```
+https://go.hotmart.com/H58750957Q?dp=1    Saúde como Forma de Vida
+```
+
+**Não remova esse `?dp=1` para "padronizar" os três.** Esse curso não tem
+página de vendas publicada na Hotmart, então o link curto normal não abre.
+Testado em agosto de 2026.
+
 ## Decisões que valem registro
 
 - **A Hotmart cuida dos cursos** e o **WhatsApp cuida do contato** — os dois
