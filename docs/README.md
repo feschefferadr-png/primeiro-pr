@@ -157,6 +157,13 @@ Testado em agosto de 2026.
 - **O tema Astra não foi reaproveitado.** Era justamente ele que quebrou o site,
   por exigir uma versão de PHP mais nova que a do servidor. O visual foi
   reconstruído do zero em CSS, seguindo a paleta e a identidade da marca.
+- **O e-mail do site é `contato@fernandascheffer.com`**, não o gmail pessoal.
+  A caixa fica na hospedagem, mas o endereço pertence ao domínio: se a
+  hospedagem for cancelada um dia, ele muda de casa sem mudar de nome. As
+  mensagens são encaminhadas para o gmail de sempre, e o Gmail está
+  configurado para responder com o endereço do domínio.
+  **Dependência:** a caixa precisa existir antes de o domínio apontar para
+  o GitHub Pages — o passo 04 do guia de migração vem antes do 05 por isso.
 - **Os formulários de contato saíram.** Eram 5 formulários do plugin WPForms,
   a maioria em inglês e sem uso. O contato agora vai direto para o WhatsApp.
 - **Os 4 "produtos" em inglês** (`Discovery Session`, `1:1 Coaching`,
