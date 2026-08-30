@@ -36,10 +36,12 @@ EOF
 
 marca='<meta name="robots" content="noindex, nofollow">'
 for f in $(find docs -name '*.html'); do
-  grep -q 'name="robots"' "$f" && continue
-  # entra logo depois do viewport, que existe em todas as paginas
-  perl -0pi -e "s{(<meta name=\"viewport\"[^>]*>\n)}{\$1$marca\n}" "$f"
-  # prefixo no titulo, visivel na aba do navegador
+  # a meta so entra se a pagina ainda nao tiver uma (a terapeuticas.html,
+  # que so redireciona, ja nasce com noindex)
+  if ! grep -q 'name="robots"' "$f"; then
+    perl -0pi -e "s{(<meta name=\"viewport\"[^>]*>\n)}{\$1$marca\n}" "$f"
+  fi
+  # o prefixo do titulo vale para todas, sem excecao
   perl -0pi -e 's{<title>(?!\[HOMOLOG\])}{<title>[HOMOLOG] }' "$f"
 done
 
