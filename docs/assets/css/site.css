@@ -351,6 +351,14 @@ section.tint { background: var(--surface-2); }
 .quote figcaption img { width: 46px; height: 46px; border-radius: 50%; flex: none; object-fit: cover; }
 .quote figcaption .quem { display: flex; flex-direction: column; }
 
+/* avatar de inicial, para as avaliacoes do Google, que nao trazem foto */
+.quote figcaption .inicial {
+  width: 46px; height: 46px; border-radius: 50%; flex: none;
+  display: grid; place-items: center;
+  background: var(--surface-2); color: var(--ink-3);
+  font-family: "Jost", sans-serif; font-size: 1.05rem; line-height: 1;
+}
+
 /* ==========================================================================
    Página do acompanhamento
    ========================================================================== */
