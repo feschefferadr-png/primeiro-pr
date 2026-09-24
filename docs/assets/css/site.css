@@ -171,6 +171,13 @@ nav.main a[aria-current="page"] { color: var(--violet-deep); border-bottom-color
 .hero .lead { margin-bottom: 34px; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
 
+/* promessa de primeira resposta, logo abaixo dos botoes do hero */
+.prazo {
+  margin: 14px 0 0;
+  font-size: .88rem;
+  color: var(--ink-3);
+}
+
 /* ---------- seções ---------- */
 
 section { padding: clamp(52px, 8vw, 92px) 0; }
