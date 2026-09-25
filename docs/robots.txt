@@ -1,4 +1,2 @@
 User-agent: *
-Allow: /
-
-Sitemap: https://fernandascheffer.com/sitemap.xml
+Disallow: /
