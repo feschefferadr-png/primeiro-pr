@@ -8,16 +8,15 @@ dados, sem plugins: são arquivos de texto que qualquer servidor entrega.
 ```
 docs/
 ├── index.html            Início
-├── acompanhamento.html   A oferta: acompanhamento de 3 meses
+├── acompanhamento.html   A oferta: acompanhamento de 28 dias
 ├── terapeuticas.html     Redirecionamento — a URL antiga aponta para a nova
 ├── cursos.html           Os 3 cursos, com link para a Hotmart
 ├── sobre.html            Bio e formação
-├── depoimentos.html      Os 6 depoimentos
+├── depoimentos.html      Depoimentos (fotos e avaliações do Google)
 ├── blog.html             Índice do blog
 ├── guia.html             Material gratuito — porta de entrada para a lista
 ├── contato.html          WhatsApp, e-mail e redes
-├── blog/                 Os 6 textos do blog
-├── favicon.svg           Ícone da aba do navegador
+├── blog/                 Os textos do blog
 └── assets/css/site.css   Todo o visual do site
 ```
 
@@ -103,10 +102,9 @@ Dentro do HTML há um comentário marcando exatamente onde trocar o botão pelo
 formulário embutido do Mailchimp ou do Brevo, quando existir lista. Peça só
 nome e e-mail: cada campo a mais derruba a conversão.
 
-**O material é o e-book "Mais Cuidados para o Inverno"**, que já acompanha um
-dos cursos. A página foi escrita sem citar a estação no título justamente
-para poder ser reaproveitada — mas o conteúdo entregue é de inverno, e vale
-fazer uma versão de primavera quando der.
+**O material é o e-book "Mais cuidados para a primavera"**, feito em
+`ebook/` (fora de `docs/` de propósito — ver `ebook/README.md`). Quando a
+estação mudar, troque o e-book e o texto de `guia.html` juntos.
 
 ## Elementos de conversão
 
